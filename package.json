@@ -1,0 +1,19 @@
+{
+  "name": "vue-cli-plugin-path-vue",
+  "version": "1.0.0",
+  "description": "Path server side rendering bootsraper/template generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wharley01/vue-cli-plugin-path-vue.git"
+  },
+  "author": "Wharley01",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Wharley01/vue-cli-plugin-path-vue/issues"
+  },
+  "homepage": "https://github.com/Wharley01/vue-cli-plugin-path-vue#readme"
+}
