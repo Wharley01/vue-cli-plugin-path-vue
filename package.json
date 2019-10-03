@@ -1,7 +1,7 @@
 {
   "name": "vue-cli-plugin-path-vue",
   "version": "1.0.0",
-  "description": "Path server side rendering bootsraper/template generator",
+  "description": "Path server side rendering framework for PathPHP framework",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

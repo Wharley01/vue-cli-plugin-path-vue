@@ -1,0 +1,53 @@
+    api.chainWebpack(config => {
+        config.optimization.splitChunks(false);
+
+        config.module
+            .rule('vue')
+            .use('vue-loader')
+            .loader('vue-loader')
+            .tap(options => {
+                // modify the options...
+                let config = {
+                    productionSourceMap: false,
+                    filenameHashing: false,
+                    configureWebpack: (config) => {
+                    config.output.globalObject = "this"
+                    return {
+                        entry: {
+                            server: './src/entry-server.js',
+                            client: './src/entry-client.js'
+                        }
+                    }
+                },
+                 baseUrl: process.env.NODE_ENV === 'production' ? '/dist/' : '/',
+                    devServer: {
+                        proxy: {
+                            '/api': {
+                                target: config.PROJECT.server
+                            },
+                            '/SSE': {
+                                target: config.PROJECT.server
+                            },
+                            '/src/assets/images': {
+                                target: config.PROJECT.server
+                            },
+                            '/path': {
+                                target: config.PROJECT.server
+                            }
+                        },
+                        port: PORT,
+                        historyApiFallback: true,
+                        host: HOST,
+                        hot: true,
+                        watchOptions: {
+                            aggregateTimeout: 300,
+                            poll: true,
+                            ignored: /node_modules/
+                        }
+                    },
+
+                }
+
+                return {...options,...config};
+            });
+    });
