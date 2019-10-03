@@ -6,5 +6,5 @@ module.exports = api => {
         }
     });
 
-    api.render("./generator");
+    api.render("../template");
 };
