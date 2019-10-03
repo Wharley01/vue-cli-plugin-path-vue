@@ -8,6 +8,27 @@
     <p>
       Path is a PHP framework crafted for modern PWA and SPA
     </p>
+      <div v-if="$state">
+          <p class="border">
+              This page was server side rendered, the data below was bound from ./path/Routes.php:48-49
+          </p>
+<!--          because $state variable only available when component is rendered from the server-->
+          <div class="center">
+              <div class="flex">
+                      <b>State name:</b>
+                  <span>
+                      {{$state.name}}
+                  </span>
+              </div>
+              <div class="flex">
+                      <b>State school:</b>
+                  <span>
+                      {{$state.school}}
+                  </span>
+              </div>
+
+          </div>
+      </div>
     <p class="flex buttons">
       <a target="_blank" href="https://path.adewale.dev/docs/v0.0.1/">Docummentation</a>
       <a target="_blank" href="https://github.com/Wharley01/Path">Contribute</a>
@@ -79,4 +100,13 @@ export default {
       border-radius: 14px;
     }
   }
+    .border{
+        border: 2px solid #a9a9a9;
+        padding: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .center{
+        text-align: center;
+    }
 </style>
