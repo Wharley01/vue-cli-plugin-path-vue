@@ -3,6 +3,7 @@ module.exports = api => {
     api.extendPackage({
         dependencies: {
             "axios": "^0.19.0",
+            "chalk": "^2.4.2",
             "vue-server-renderer": "^2.6.10"
         }
     });
