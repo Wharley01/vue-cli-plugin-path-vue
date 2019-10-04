@@ -8,14 +8,12 @@ module.exports = api => {
 
     api.render("../template");
 
-    api.exitLog("Vue PathPHP plugin successfully installed \n\n","done");
+    api.exitLog("plugin successfully installed \n","done");
+    console.log("To try the server side rendering, run \n");
+    console.info("yarn build \n");
+    console.info("./path start server \n");
+    console.log("To run from client side, run \n\n");
+    console.info("yarn serve\n");
 
-    api.exitLog("To try the server side rendering, run \n","info");
-    api.exitLog("yarn build \n","log");
-
-    api.exitLog("./path start server \n\n","log");
-
-    api.exitLog("To run from client side, run \n","info");
-    api.exitLog("yarn serve\n","log");
 
 };
