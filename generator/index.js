@@ -1,3 +1,4 @@
+import c from "chalk"
 module.exports = api => {
     api.extendPackage({
         dependencies: {
@@ -7,13 +8,15 @@ module.exports = api => {
     });
 
     api.render("../template");
-
     api.exitLog("plugin successfully installed \n","done");
-    console.log("To try the server side rendering, run \n");
-    console.info("yarn build \n");
-    console.info("./path start server \n");
-    console.log("To run from client side, run \n\n");
-    console.info("yarn serve\n");
+    api.onCreateComplete = () => {
+        console.log(c.blue.bold(" >> To try the server side rendering, run \n"));
+        console.info(c.green.bold(" $ yarn build "));
+        console.info(c.green.bold(" $ ./path start server"));
+        console.log(c.blue.bold(" >> To run from client side, run \n"));
+        console.info(c.green.bold("yarn serve\n"));
+    }
+
 
 
 };
