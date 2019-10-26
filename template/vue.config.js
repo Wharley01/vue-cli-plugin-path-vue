@@ -10,15 +10,15 @@ module.exports = {
     config.optimization.splitChunks(false)
   },
   configureWebpack: (config) => {
-    config.output.globalObject = "this"
+    config.output.globalObject = "this";
     return {
       entry: {
-        server: './src/entry-server.js',
-        client: './src/entry-client.js'
+        server: './src/ssr/server.js',
+        client: './src/ssr/client.js'
       }
     }
   },
-  baseUrl: process.env.NODE_ENV === 'production' ? '/dist/' : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/dist/' : '/',
   devServer: {
     proxy: {
       '/api': {
