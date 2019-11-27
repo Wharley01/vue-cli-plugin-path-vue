@@ -1,16 +1,23 @@
 // let BrowserSyncPlugin = require('vue-cli-browser-sync-webpack-plugin');
-let config = require('./path/project.pconf.json')
+let config = require('./path/project.pconf.json');
+const WebpackAssetsManifest = require('webpack-assets-manifest')
 // let wp_conf = require('./webpack.base.config')
 const PORT = config.PROJECT.port
 const HOST = config.PROJECT.host
 module.exports = {
   productionSourceMap: false,
-  filenameHashing: false,
+  // filenameHashing: false,
   chainWebpack: config => {
     config.optimization.splitChunks(false)
   },
   configureWebpack: (config) => {
     config.output.globalObject = "this";
+    config.plugins = config.plugins.concat(
+        new WebpackAssetsManifest({
+          output: 'asset-manifest.json',
+          entrypoints: true
+        })
+    )
     return {
       entry: {
         server: './src/ssr/server.js',
