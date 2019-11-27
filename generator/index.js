@@ -12,10 +12,13 @@ module.exports = api => {
             "axios": "^0.19.0",
             "chalk": "^2.4.2",
             "vue-server-renderer": "^2.6.10",
-            "vuex-router-sync": "^5.0.0"
+            "vuex-router-sync": "^5.0.0",
+            "vue-router": "^3.1.3"
         },
         devDependencies: {
-            "vue-route-generator": "^0.4.1"
+            "vue-route-generator": "^0.4.1",
+            "webpack-assets-manifest": "^3.1.1"
+
         }
     });
 
