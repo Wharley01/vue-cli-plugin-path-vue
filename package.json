@@ -1,6 +1,6 @@
 {
   "name": "vue-cli-plugin-path-vue",
-  "version": "2.1.0",
+  "version": "2.9.0",
   "description": "Path server side rendering framework for PathPHP framework",
   "main": "index.js",
   "scripts": {
