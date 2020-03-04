@@ -1,0 +1,52 @@
+<!doctype html>
+<html data-vue-meta-server-rendered>
+<head {{ headAttrs.text() }}>
+    <link rel="icon" href="/favicon.ico?v=favicon">
+    <link rel="alternate" type="application/rss+xml" title="Waploaded Sitemaps" href="https://www.waploaded.com/sitemap" />
+    <link rel="alternate" type="application/rss+xml" title="Waploaded Feed" href="https://www.waploaded.com/feed" />
+    {{ title.text() }}
+    {{ meta.text() }}
+    {{ link.text() }}
+    {{ style.text() }}
+    {{ script.text() }}
+    {{ noscript.text() }}
+    <div id="_____code_head"></div>
+    <data:head></data:head>
+</head>
+<body {{ bodyAttrs.text() }}>
+{{ bodyPrepend(true) }}
+{{ style.text({ pbody: true }) }}
+{{ noscript.text({ pbody: true }) }}
+{{ app }}
+
+{{ style.text({ body: true }) }}
+{{ script.text({ body: true }) }}
+{{ noscript.text({ body: true }) }}
+<data:scripts></data:scripts>
+<script src="https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit" async defer></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-39050107-1"></script>
+<!-- Start Alexa Certify Javascript -->
+
+<script type="text/javascript">
+
+    _atrk_opts = { atrk_acct:"zs80k1a0Sn00ic", domain:"waploaded.com",dynamic: true};
+
+    (function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://certify-js.alexametrics.com/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
+
+</script>
+
+<noscript><img src="https://certify.alexametrics.com/atrk.gif?account=zs80k1a0Sn00ic" style="display:none" height="1" width="1" alt="" /></noscript>
+
+<!-- End Alexa Certify Javascript -->
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-39050107-1');
+</script>
+<div id="_____code_bottom"></div>
+{{ bodyAppend(true) }}
+</body>
+</html>

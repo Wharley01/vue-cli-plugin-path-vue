@@ -1,15 +1,12 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-Vue.use(Vuex)
+export default function (Vuex, $vm, $router) {
 
-export default new Vuex.Store({
-  state: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
-  }
-})
+  return new Vuex.Store({
+    state: {},
+    mutations: {},
+    actions: {},
+    getters: {}
+  })
+}

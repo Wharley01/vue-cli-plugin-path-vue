@@ -4,7 +4,7 @@ const fs = require('fs')
 //vue-cli-service generate-routes
 module.exports = api => {
     api.extendPackage({
-        scripts:{
+        scripts: {
             "serve": "vue-cli-service generate-routes && vue-cli-service serve",
             "build": "vue-cli-service generate-routes && vue-cli-service build"
         },
@@ -13,7 +13,9 @@ module.exports = api => {
             "chalk": "^2.4.2",
             "vue-server-renderer": "^2.6.10",
             "vuex-router-sync": "^5.0.0",
-            "vue-router": "^3.1.3"
+            "vue-router": "^3.1.3",
+            "vue-meta": "^2.3.1",
+
         },
         devDependencies: {
             "vue-route-generator": "^0.4.1",
@@ -23,7 +25,7 @@ module.exports = api => {
     });
 
     api.render("../template");
-    api.exitLog("plugin successfully installed \n","done");
+    api.exitLog("plugin successfully installed \n", "done");
 
     api.onCreateComplete(() => {
 

@@ -4,16 +4,15 @@ import routesClient from "./routes-client";
 
 let has_context = typeof context != 'undefined'
 
-
-
-// console.log({has_context: typeof context != 'undefined'})
-
 Vue.use(Router)
 
 export default () => {
 
   return new Router({
     mode: 'history',
-    routes: routesClient
+    routes: routesClient,
+    scrollBehavior() {
+      return { x: 0, y: 0 };
+    },
   })
 }
