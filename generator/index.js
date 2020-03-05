@@ -15,6 +15,7 @@ module.exports = api => {
             "vuex-router-sync": "^5.0.0",
             "vue-router": "^3.1.3",
             "vue-meta": "^2.3.1",
+            "raw-loader": "^4.0.0"
 
         },
         devDependencies: {
