@@ -35,21 +35,15 @@ export default (state = null, router) => {
   const store = createStore(Vuex, new Vue(), router);
 
   router.beforeEach((to, from, next) => {
-    store.commit("SET_GLOBAL_LOADING_STATE", true);
     ////console.log("Route Loading");
     next();
   });
 
   router.afterEach((to, from) => {
-    store.commit("SET_GLOBAL_LOADING_STATE", false);
 
     ////console.log("Route Loaded");
   });
 
-  Vue.use(VueAnalytics, {
-    id: "UA-39050107-1",
-    router
-  });
 
   const app = new Vue({
     // inject router into root Vue instance
