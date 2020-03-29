@@ -1,0 +1,50 @@
+{
+  "DATABASE": {
+    "host": "localhost",
+    "user": "root",
+    "password": "",
+    "name": "gidient"
+  },
+  "FILE": {
+    "max_size": 5242880
+  },
+  "SSR": {
+    "is_node": false,
+    "node_path": "node"
+  },
+  "PROJECT": {
+    "name": "Path",
+    "is_production": true,
+    "version": "1.0",
+    "directory": "",
+    "host": "192.168.0.128",
+    "port": "9001",
+    "protocol": "http",
+    "server": "http://192.168.0.128:8080",
+    "_comment": "SSE/WS can be value of watch_method",
+    "watch_method": "WS"
+  },
+  "WATCHER": {
+    "method": "WS",
+    "WEBSOCKET": {
+      "host": "http://blog-server.loc",
+      "port": 443,
+      "scheme": "SSL"
+    }
+  },
+  "MAILER": {
+    "USE_SMTP": false,
+    "SMTP": {
+      "host": "",
+      "username": "",
+      "password": "",
+      "port": 0,
+      "protocol": "",
+      "charset": "UTF-8"
+    },
+    "ADMIN_INFO": {
+      "email": "admin@__path.com",
+      "name": "Path Admin"
+    }
+  }
+}
