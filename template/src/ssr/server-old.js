@@ -101,4 +101,3 @@ function main(url, state) {
     );
   });
 }
-

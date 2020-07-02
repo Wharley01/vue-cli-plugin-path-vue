@@ -14,4 +14,3 @@ if(window.__INITIAL_STATE__){
 }
 
 app.$mount('#app',true);
-

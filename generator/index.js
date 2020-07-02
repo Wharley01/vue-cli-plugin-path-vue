@@ -32,7 +32,7 @@ module.exports = api => {
 
         console.log(chalk.blue.bold("\n\n >> To try the server side rendering, run \n"));
         console.info(chalk.green.bold(" $ yarn build "));
-        console.info(chalk.green.bold(" $ ./__path start server\n"));
+        console.info(chalk.green.bold(" $ ./__path serve\n"));
         console.log(chalk.blue.bold(" >> To run from client side, run \n"));
         console.info(chalk.green.bold(" $ yarn serve\n\n"));
 

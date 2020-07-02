@@ -1,14 +1,25 @@
 // let BrowserSyncPlugin = require('vue-cli-browser-sync-webpack-plugin');
 let config = require('./path/project.pconf.json');
 const WebpackAssetsManifest = require('webpack-assets-manifest')
+const IS_PRODUCTION = true;
 // let wp_conf = require('./webpack.base.config')
 const PORT = config.PROJECT.port
 const HOST = config.PROJECT.host
 module.exports = {
   productionSourceMap: false,
+  transpileDependencies: [
+    "@__path/graph",
+    "@__path/bool",
+    "vue-modally",
+    "vue-router",
+    "epic-spinners",
+    "vue-agile",
+    "vue-color",
+    "vue-currency-input"
+  ],
   // filenameHashing: false,
   chainWebpack: config => {
-    config.optimization.splitChunks(false)
+    config.optimization.splitChunks(false);
   },
   configureWebpack: (config) => {
     config.output.globalObject = "this";
@@ -19,16 +30,16 @@ module.exports = {
         })
     )
     return {
-      entry: {
-        server: './src/ssr/server.js',
-        client: './src/ssr/client.js'
-      }
+      entry: './src/ssr/client.js'
     }
   },
   publicPath: process.env.NODE_ENV === 'production' ? '/dist/' : '/',
   devServer: {
     proxy: {
       '/api': {
+        target: config.PROJECT.server
+      },
+      '/path-graph': {
         target: config.PROJECT.server
       },
       '/SSE': {

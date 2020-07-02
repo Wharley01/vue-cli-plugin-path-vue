@@ -1,6 +1,6 @@
 /*Variables*/
 @import url("https://fonts.googleapis.com/css?family=Poppins:200,300,500,600");
-@import url("./fonts/sofia.scss");
+@import url("fonts/sofia.scss");
 :root {
   --ig: linear-gradient(345.14deg, #FCB045 -0.82%, rgba(253, 29, 29, 0.69) 49.07%, rgba(131, 58, 180, 0.71) 100%);
   --blue: #2F80ED;
