@@ -1,6 +1,6 @@
 # path's Vue plugin
 
-## Intsallation
+## Installation
 
 After creating a vuejs prooject, run
 
