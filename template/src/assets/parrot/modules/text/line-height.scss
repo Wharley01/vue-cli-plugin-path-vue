@@ -1,0 +1,39 @@
+@mixin line-height-for-screen($screen,$state,$state_name){
+  @each $element, $size in $sizes {
+    .#{$state_name}#{$screen}txt-h-#{$element}#{$state} {
+      line-height: #{toRem($size,$element)}!important;
+    }
+  }
+}
+
+
+
+@include line-height-for-screen('','','');
+
+@media only screen and (max-width: 599px) {
+  @include line-height-for-screen('sm-','','');
+}
+//md-css-property
+@media only screen and (min-width: 600px) and (max-width: 899px){
+  @include line-height-for-screen('md-','','');
+}
+
+//lg-css-property
+@media only screen and (min-width: 900px) and (max-width: 1199px) {
+  /*tablet-landscape-only*/
+  @include line-height-for-screen('lg-','','');
+}
+//xlg-css-property
+@media only screen and (min-width: 1200px) and (max-width: 1400px){
+  /*.desktop-only */
+  @include line-height-for-screen('xlg-','','');
+}
+//xxlg-css-property
+@media only screen and (min-width: 1401px) {
+  /*.desktop-up */
+  @include line-height-for-screen('xxlg-','','');
+}
+
+@include line-height-for-screen('',':hover','hover\\:');
+@include line-height-for-screen('',':focus','focus\\:');
+@include line-height-for-screen('',':active','active\\:');

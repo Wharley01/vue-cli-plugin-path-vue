@@ -1,0 +1,74 @@
+@mixin flex-index-for-screen($screen){
+  /*::flex*/
+  .#{$screen}flex{
+    display: flex!important;
+  }
+  .#{$screen}flex-wrap{
+    flex-wrap: wrap!important;
+  }
+
+  .#{$screen}inline-flex{
+    display: inline-flex!important;
+  }
+
+  .#{$screen}col{
+    flex-direction: column!important;
+  }
+
+  .#{$screen}col{
+    flex-direction: column!important;
+  }
+
+  .#{$screen}row{
+    flex-direction: row!important;
+  }
+
+  .#{$screen}row-responsive{
+    flex-direction: row!important;
+  }
+
+
+  //Column
+  @each $element, $size in $sizes {
+    .#{$screen}flex-col-gap-#{$element} > *:nth-child(odd) {
+      margin-right: #{toRem($size,$element)}!important;
+    }
+  }
+  //Row
+  @each $element, $size in $sizes {
+    .#{$screen}flex-row-gap-#{$element} > *:not(:last-child) {
+      margin-bottom: #{toRem($size,$element)}!important;
+    }
+  }
+
+  .#{$screen}flex-wrap > * {
+    max-width: 43vw!important;
+  }
+
+}
+
+@include flex-index-for-screen('');
+
+@media only screen and (max-width: 599px) {
+  @include flex-index-for-screen('sm-');
+}
+//md-css-property
+@media only screen and (min-width: 600px) and (max-width: 899px){
+  @include flex-index-for-screen('md-');
+}
+
+//lg-css-property
+@media only screen and (min-width: 900px) and (max-width: 1199px) {
+  /*tablet-landscape-only*/
+  @include flex-index-for-screen('lg-');
+}
+//xlg-css-property
+@media only screen and (min-width: 1200px) and (max-width: 1400px){
+  /*.desktop-only */
+  @include flex-index-for-screen('xlg-');
+}
+//xxlg-css-property
+@media only screen and (min-width: 1401px) {
+  /*.desktop-up */
+  @include flex-index-for-screen('xxlg-');
+}

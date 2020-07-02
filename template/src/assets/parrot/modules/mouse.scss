@@ -1,0 +1,62 @@
+@mixin mouse-for-screen($screen,$state,$state_name){
+  /*WIDTH*/
+  .#{$state_name}#{$screen}mouse-pointer#{$state} {
+      cursor: pointer!important;
+    }
+  .#{$state_name}#{$screen}mouse-text#{$state} {
+    cursor: text!important;
+  }
+  .#{$state_name}#{$screen}mouse-auto#{$state} {
+    cursor: auto!important;
+  }
+  .#{$state_name}#{$screen}mouse-not-allowed#{$state} {
+    cursor: not-allowed!important;
+  }
+  .#{$state_name}#{$screen}mouse-copy#{$state} {
+    cursor: copy!important;
+  }
+  .#{$state_name}#{$screen}mouse-none#{$state} {
+    cursor: none!important;
+  }
+  .#{$state_name}#{$screen}mouse-cell#{$state} {
+    cursor: cell!important;
+  }
+  .#{$state_name}#{$screen}mouse-alias#{$state} {
+    cursor: alias!important;
+  }
+  .#{$state_name}#{$screen}mouse-col-resize#{$state} {
+    cursor: col-resize!important;
+  }
+  .#{$state_name}#{$screen}mouse-context-menu#{$state} {
+    cursor: context-menu!important;
+  }
+}
+
+@include mouse-for-screen('','','');
+
+@media only screen and (max-width: 599px) {
+  @include mouse-for-screen('sm-','','');
+}
+//md-css-property
+@media only screen and (min-width: 600px) and (max-width: 899px){
+  @include mouse-for-screen('md-','','');
+}
+
+//lg-css-property
+@media only screen and (min-width: 900px) and (max-width: 1199px) {
+  /*tablet-landscape-only*/
+  @include mouse-for-screen('lg-','','');
+}
+//xlg-css-property
+@media only screen and (min-width: 1200px) and (max-width: 1400px){
+  /*.desktop-only */
+  @include mouse-for-screen('xlg-','','');
+}
+//xxlg-css-property
+@media only screen and (min-width: 1401px) {
+  /*.desktop-up */
+  @include mouse-for-screen('xxlg-','','');
+}
+@include mouse-for-screen('',':hover','hover\\:');
+@include mouse-for-screen('',':focus','focus\\:');
+@include mouse-for-screen('',':active','active\\:');

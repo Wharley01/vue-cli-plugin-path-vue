@@ -1,0 +1,14 @@
+@mixin text-headings-for-screen($screen,$state,$state_name){
+  @each $element, $size in $header_texts {
+    #{$element} {
+      font-size: #{toRem($size)}!important;
+      line-height: #{getLineHeight($size)};
+    }
+  }
+
+
+}
+
+
+
+@include text-headings-for-screen('','','');

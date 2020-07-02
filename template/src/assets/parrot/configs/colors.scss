@@ -1,0 +1,71 @@
+:root{
+
+  --ig: linear-gradient(345.14deg, #FCB045 -0.82%, rgba(253, 29, 29, 0.69) 49.07%, rgba(131, 58, 180, 0.71) 100%);
+  --blue: #2F80ED;
+  --sec: #F8ED86;
+  --sec-tint-1: #414141;
+  --sec-tint-2: #777777;
+  --sec-tint-3: #adadad;
+  --sec-shade-1: #222222;
+  --sec-shade-2: #141414;
+  --sec-shade-3: #060606;
+  --pry: #415B90;
+  --pry-tint-1: #506FAC;
+  --pry-tint-2: #8DA6D6;
+  --pry-tint-3: #d5e4ff;
+  --pry-shade-1: #32456B;
+  --pry-shade-2: #3C465B;
+  --pry-shade-3: #672c00;
+  --red: #92140f;
+  --green: #229c20;
+  --grey: #F2F4F8;
+  --grey-shade-1: #a8b2c4;
+  --grey-shade-2: #959cb3;
+  --grey-shade-3: #606575;
+  --link-color: #2F80ED;
+  --black: #222733;
+  --black-tint-1: #555b6b;
+  --white: #fff;
+  --none: transparent;
+  --error: #ff4d46;
+  --error-tint-1: #ffd7cb;
+  --success: #59d065;
+  --info: #54c5dd
+}
+
+$colors:(
+        ig:  var(--ig),
+        pry:  var(--pry),
+        pry-tint-1:  var(--pry-tint-1),
+        pry-tint-2:  var(--pry-tint-2),
+        pry-tint-3:  var(--pry-tint-3),
+        pry-shade-1:  var(--pry-shade-1),
+        pry-shade-2:  var(--pry-shade-2),
+        pry-shade-3:  var(--pry-shade-3),
+        sec:  var(--sec),
+        blue:  var(--blue),
+        sec-tint-1:  var(--sec-tint-1),
+        sec-tint-2:  var(--sec-tint-2),
+        sec-tint-3:  var(--sec-tint-3),
+        sec-shade-1:  var(--sec-shade-1),
+        sec-shade-2:  var(--sec-shade-2),
+        red:  var(--red),
+        green:  var(--green),
+        purple:  var(--purple),
+        grey:  var(--grey),
+        grey-shade-1:  var(--grey-shade-1),
+        grey-shade-2:  var(--grey-shade-2),
+        grey-shade-3:  var(--grey-shade-3),
+        link-color:  var(--link-color),
+        black:  var(--black),
+        black-tint-1:  var(--black-tint-1),
+        yellow:  var(--yellow),
+        white:  var(--white),
+        none:  var(--none),
+        error:  var(--error),
+        error-tint-1:  var(--error-tint-1),
+        success:  var(--success),
+        info:  var(--info),
+        pry-grad:  var(--pry-grad),
+
+)

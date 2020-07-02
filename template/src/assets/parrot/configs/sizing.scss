@@ -1,0 +1,114 @@
+$letter_spacing: .3px;
+$line_spacing: 180%;
+$font_size: 16;
+$line_height_ratio: 1.618;//golden ratio
+//$line_height_ratio: 1.333;
+//@function Px($size) {
+//  @return $size;
+//}
+$size_to_ignore :(
+        full: 100%,
+        half: 50%,
+        auto: auto,
+        normal: normal,
+        vw: 100vw,
+        vh: 100vh,
+        none: 0
+);
+
+@function toRem($size,$key: false){
+  @if($key != false){
+    $is_a_keyword: map_has_key($size_to_ignore,$key) == true;
+    //@debug $is_a_keyword,$key;
+    @if($is_a_keyword == false){
+      $remSize: $size / 16;
+      @return #{$remSize}rem;
+    }@else {
+      @return $size;
+    }
+  } @else{
+    $remSize: $size / 16;
+    @return #{$remSize}rem;
+  }
+}
+@function getLineHeight($size,$key: false){
+  @if($key != false){
+    $is_a_keyword: map_has_key($size_to_ignore,$key) == true;
+    //@debug $is_a_keyword,$key;
+    @if($is_a_keyword == false){
+      $remSize: $size * $line_height_ratio;
+      @return toRem($remSize);
+    }@else {
+      @return toRem($size);
+    }
+  } @else{
+    $remSize: $size * $line_height_ratio;
+    @return toRem($remSize);
+  }
+}
+@function toPx($size,$key: false){
+  @if($key != false){
+    @if(map_has_key($size_to_ignore,$key) == false){
+      @return #{$size}px;
+    }@else {
+      @return $size;
+    }
+  } @else{
+    @return #{$size}px;
+  }
+}
+
+@function Px($size) {
+  @return $size;
+}
+
+$unit_size: 2.0;
+/*Sizing*/
+$sizes: (
+        base: $unit_size,
+        x1: 1,
+        corner: 5,
+        x2: Px($unit_size * 2),
+        x3: Px($unit_size * 4),
+        x4: Px($unit_size * 5),
+        x5: Px($unit_size * 6),
+        x6: Px($unit_size * 7),
+        x7: Px($unit_size * 8),
+        x8: Px($unit_size * 9),
+        x9: Px($unit_size * 12),
+        x10: Px($unit_size * 16),
+        x11: Px($unit_size * 21),
+        x12: Px($unit_size * 28),
+        x13: Px($unit_size * 42),
+        x14: Px($unit_size * 63),
+        x15: Px($unit_size * 90),
+        x16: Px($unit_size * 120),
+        x17: Px($unit_size * 140),
+        x18: Px($unit_size * 160),
+        x19: Px($unit_size * 180),
+        x20: Px($unit_size * 200),
+        x21: Px($unit_size * 240),
+        x22: Px($unit_size * 280),
+        x23: Px($unit_size * 300),
+        x24: Px($unit_size * 340),
+        x25: Px($unit_size * 380),
+        x26: Px($unit_size * 400),
+        none: 0,
+        full: 100%,
+        half: 50%,
+        auto: auto,
+        normal: normal,
+        vw: 100vw,
+        vh: 100vh,
+);
+$header_texts: (
+        h6: 8,
+        h5: 21,
+        h4: 28,
+        h3: 37,
+        h2: 50,
+        h1: 67
+);
+
+
+

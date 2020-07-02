@@ -1,0 +1,69 @@
+*{
+  box-sizing: border-box;
+  transition: .3s all;
+}
+html{
+  overflow-x: hidden;
+}
+body{
+  font-family: $normal_text_font!important;
+  margin: 0;
+  padding: 0;
+  font-size: #{toRem($font_size)};
+  font-weight: 300;
+  line-height: #{getLineHeight($font_size)};
+  overflow-x: hidden;
+  //letter-spacing: .5px!important;
+}
+p{
+  font-family: $normal_text_font!important;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-style: normal;
+  font-weight: 300;
+  font-size: #{toRem($font_size)};
+  line-height: #{getLineHeight($font_size)};
+}
+a{
+  font-family: $normal_text_font!important;
+  font-size: $font_size;
+  cursor: pointer;
+  text-decoration: none;
+  color: map_get($colors,link-color);
+  font-weight: 300;
+}
+h1,h2,h3,h4,h5,h6{
+  font-family: $head_text_font;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.h{
+  font-family: $head_text_font!important;
+}
+
+input,textarea,button,select{
+  font-family: $btn_text_font!important;
+  font-size: #{toRem($font_size)};
+  line-height: #{getLineHeight($font_size)};
+}
+
+.grid > div{
+  min-width: 0;
+}
+@function should-replace($string,$search){
+  $index: str-index($string, $search);
+  @if $index {
+    @return true;
+  } @else {
+    @return false;
+  }
+}
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return #{str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace)};
+  }
+
+  @return #{$string};
+}

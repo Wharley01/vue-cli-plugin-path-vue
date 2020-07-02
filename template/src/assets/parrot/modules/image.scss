@@ -1,0 +1,44 @@
+@mixin image-for-screen($screen,$state,$state_name){
+  /*WIDTH*/
+  .#{$state_name}#{$screen}img-cover#{$state} {
+      object-fit: cover!important;
+  }
+  .#{$state_name}#{$screen}img-fill#{$state} {
+    object-fit: fill!important;
+  }
+  .#{$state_name}#{$screen}img-contain#{$state} {
+    object-fit: contain!important;
+  }
+  .#{$state_name}#{$screen}img-scale-down#{$state} {
+    object-fit: scale-down!important;
+  }
+}
+
+@include image-for-screen('','','');
+
+@media only screen and (max-width: 599px) {
+  @include image-for-screen('sm-','','');
+}
+//md-css-property
+@media only screen and (min-width: 600px) and (max-width: 899px){
+  @include image-for-screen('md-','','');
+}
+
+//lg-css-property
+@media only screen and (min-width: 900px) and (max-width: 1199px) {
+  /*tablet-landscape-only*/
+  @include image-for-screen('lg-','','');
+}
+//xlg-css-property
+@media only screen and (min-width: 1200px) and (max-width: 1400px){
+  /*.desktop-only */
+  @include image-for-screen('xlg-','','');
+}
+//xxlg-css-property
+@media only screen and (min-width: 1401px) {
+  /*.desktop-up */
+  @include image-for-screen('xxlg-','','');
+}
+@include image-for-screen('',':hover','hover\\:');
+@include image-for-screen('',':focus','focus\\:');
+@include image-for-screen('',':active','active\\:');

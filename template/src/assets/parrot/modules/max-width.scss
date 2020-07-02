@@ -1,0 +1,37 @@
+@mixin max-width-for-screen($screen,$state,$state_name){
+  /*WIDTH*/
+  @each $element, $size in $sizes {
+    .#{$state_name}#{$screen}max-w-#{$element}#{$state} {
+      max-width: #{toRem($size,$element)}!important;
+    }
+  }
+}
+
+@include max-width-for-screen('','','');
+
+@media only screen and (max-width: 599px) {
+  @include max-width-for-screen('sm-','','');
+}
+//md-css-property
+@media only screen and (min-width: 600px) and (max-width: 899px){
+  @include max-width-for-screen('md-','','');
+}
+
+//lg-css-property
+@media only screen and (min-width: 900px) and (max-width: 1199px) {
+  /*tablet-landscape-only*/
+  @include max-width-for-screen('lg-','','');
+}
+//xlg-css-property
+@media only screen and (min-width: 1200px) and (max-width: 1400px){
+  /*.desktop-only */
+  @include max-width-for-screen('xlg-','','');
+}
+//xxlg-css-property
+@media only screen and (min-width: 1401px) {
+  /*.desktop-up */
+  @include max-width-for-screen('xxlg-','','');
+}
+@include max-width-for-screen('',':hover','hover\\:');
+@include max-width-for-screen('',':focus','focus\\:');
+@include max-width-for-screen('',':active','active\\:');

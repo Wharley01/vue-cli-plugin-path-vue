@@ -1,0 +1,37 @@
+@mixin min-height-for-screen($screen,$state,$state_name){
+  /*WIDTH*/
+  @each $element, $size in $sizes {
+    .#{$state_name}#{$screen}min-h-#{$element}#{$state} {
+      min-height: #{toRem($size,$element)}!important;
+    }
+  }
+}
+
+@include min-height-for-screen('','','');
+
+@media only screen and (max-width: 599px) {
+  @include min-height-for-screen('sm-','','');
+}
+//md-css-property
+@media only screen and (min-width: 600px) and (max-width: 899px){
+  @include min-height-for-screen('md-','','');
+}
+
+//lg-css-property
+@media only screen and (min-width: 900px) and (max-width: 1199px) {
+  /*tablet-landscape-only*/
+  @include min-height-for-screen('lg-','','');
+}
+//xlg-css-property
+@media only screen and (min-width: 1200px) and (max-width: 1400px){
+  /*.desktop-only */
+  @include min-height-for-screen('xlg-','','');
+}
+//xxlg-css-property
+@media only screen and (min-width: 1401px) {
+  /*.desktop-up */
+  @include min-height-for-screen('xxlg-','','');
+}
+@include min-height-for-screen('',':hover','hover\\:');
+@include min-height-for-screen('',':focus','focus\\:');
+@include min-height-for-screen('',':active','active\\:');
