@@ -1,34 +1,14 @@
 import Vue from "vue";
+import Vuex from "vuex";
 import App from "./App.vue";
+import '@__path/bool'
+import BindPlugins from "./BindPlugins";
+import GlobalMixins from "./GlobalMixins";
 import createStore from "./store";
-import axios from "axios";
-import Meta from "vue-meta";
-import Vuex, { mapState } from "vuex";
-
-Vue.use(Meta, {
-  // optional pluginOptions
-  refreshOnceOnNavigation: true
-});
-
-Vue.use(Vuex);
+BindPlugins(Vue, Vuex);
+GlobalMixins(Vue);
 
 // Vue.config.devtools = true;
-
-if (typeof window !== "undefined") {
-}
-
-// let api_root = '';
-let api_root = "https://api.website.com";
-let api_version = "v1";
-
-// import
-
-let axiosInstance = axios.create({
-  baseURL: api_root + "/" + api_version,
-  withCredentials: true
-});
-
-Vue.prototype.$http = axiosInstance;
 Vue.config.productionTip = false;
 
 export default (state = null, router) => {
@@ -36,11 +16,12 @@ export default (state = null, router) => {
 
   router.beforeEach((to, from, next) => {
     ////console.log("Route Loading");
+    // store.commit('STARTED_LOADING');
     next();
   });
 
   router.afterEach((to, from) => {
-
+    // store.commit('STOPPED_LOADING');
     ////console.log("Route Loaded");
   });
 

@@ -15,8 +15,12 @@ module.exports = api => {
             "vuex-router-sync": "^5.0.0",
             "vue-router": "^3.1.3",
             "vue-meta": "^2.3.1",
-            "raw-loader": "^4.0.0"
-
+            "raw-loader": "^4.0.0",
+            "@__path/bool": "^1.4.0",
+            "@__path/graph": "^2.7.40",
+            "vue-modally": "^2.2.0",
+            "vue-currency-input": "^1.19.0",
+            "vue-toast-notification": "^0.2.0"
         },
         devDependencies: {
             "vue-route-generator": "^0.4.1",
