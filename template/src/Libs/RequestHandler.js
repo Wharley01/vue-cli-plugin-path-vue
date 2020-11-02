@@ -20,13 +20,16 @@ export default {
             fetching: false,
             silent_fetch: false,
             fetching_more: false,
+            auto_refresh: false,
             loading: false,
             error: null,
-            $__cache_key: null,
-            cache: true
+            v__cache_key: null,
+            cache: true,
+            filters: {}
         }
     },
     created(){
+
         this.Graph = new this.$graph();
         this.Graph.service(this.service);
 
@@ -56,8 +59,9 @@ export default {
         },
         async nextPage(){
             // console.log('in the end');
+            console.log({current_page:this.current_page,total_pages: this.total_pages})
             if(this.current_page >= this.total_pages){
-                console.log('__>> page ended');
+                // console.log('__>> page ended');
                 return ;
             }
             this.current_page += 1;
@@ -77,15 +81,24 @@ export default {
             }else{
                 this.Graph.fetch(...this.columns);
             }
+
             this.Graph.service(this.service);
+            this.Graph.where(this.filters);
 
             //set page
             // this.Graph.page(this.current_page);
         },
         async executeFetch(resFunc = null){
+            if(!this.service || this.service.trim().length < 1){
+                console.error("Specify service property")
+                console.trace("");
+                return;
+            }
             this.Graph.page(this.current_page);
-            this.Graph.service(this.service);
+            this.Graph.where(this.filters);
             this.Graph.fetch(...this.columns);
+            this.Graph.service(this.service);
+
             if(this.search_col){
                 if(this.search_query.value && typeof this.search_query.value == 'string' && this.search_query.value.trim().length){
                     this.Graph.search(this.search_col,this.search_query.value);
@@ -112,7 +125,7 @@ export default {
                         this.total_pages = res.getTotalPages();
                         if(this.cache){
                             //if should cache, then cache
-                            this.CACHE_RESPONSE({key: this.$__cache_key, response: res},{}/*useless*/);
+                            this.CACHE_RESPONSE({key: this.v__cache_key, response: res},{}/*useless*/);
                         }
                     }else {
                         resFunc(res);
@@ -126,19 +139,19 @@ export default {
             })
         },
         async fetch(...columns){
-        //    do fetching
+            //    do fetching
             this.initiateFetch(...columns);
             //check if there is cache available, if yes, use it instead
-            this.$__cache_key = this.Graph.getCacheHash();
+            this.v__cache_key = this.Graph.getCacheHash();
 
-            if(this.is_cached(this.$__cache_key) && this.cache){
+            if(this.is_cached(this.v__cache_key) && this.cache){
                 //we have a cached version
                 //set it as the data
-                let res =  this.get_cached_response(this.$__cache_key);
+                let res =  this.get_cached_response(this.v__cache_key);
                 this.data = res.getData();
                 this.current_page = res.getCurrentPage();
                 this.total_pages = res.getTotalPages();
-                console.info('[cache]: Data came from cache');
+                console.info('[cache]: Data came from cache, cacheID: ' + this.v__cache_key);
                 this.onSuccess(res);
                 return ;
             }
@@ -147,31 +160,25 @@ export default {
 
         },
         async refresh(){
-            this.DELETE_CACHE(this.$__cache_key);
+            this.DELETE_CACHE(this.v__cache_key);
             await  this.executeFetch(null)
 
         },
         async fetchSearchResult(){
-            this.DELETE_CACHE(this.$__cache_key);
+            this.DELETE_CACHE(this.v__cache_key);
             await  this.executeFetch(null);
         },
-        async set(values = null,func = null){
+        async sendData(values = null,func = null, callback = null, fallBackFunc = 'set'){
             if(this.loading)
                 return;
             //    do fetching
             this.clearFormErrors();
             values  = values ? values : BuildForm(this.form);
             if(!func)
-                this.Graph.func('set');
+                this.Graph.func(fallBackFunc);
             else
                 this.Graph.func(func);
 
-            if (!this.$__cache_key){
-            //    set to page 1
-                this.Graph.page(1);
-            //update cache key
-                this.$__cache_key = this.Graph.getCacheHash();
-            }
 
             this.loading = true;
             return await this.sendRequest('set',values,(res) => {
@@ -180,71 +187,22 @@ export default {
                 this.bindFormErrors(res.getData());
                 this.onError(res);
             },(res) => {
-                this.onAdded(res);
-                this.DELETE_CACHE(this.$__cache_key)
+                if(callback instanceof Function){
+                    callback(res)
+                }
+                if(this.auto_refresh)
+                    this.refresh();
             });
+        },
+        async set(values = null,func = null){
+            return await this.sendData(values,func,this.onAdded)
         },
         async update(values = null,func = null){
-            if(this.loading)
-                return;
-            //    do fetching
-            this.clearFormErrors();
-            values  = values ? values : BuildForm(this.form);
-
-            if(!func)
-                this.Graph.func('update');
-            else
-                this.Graph.func(func);
-
-            if (!this.$__cache_key){
-                //    set to page 1
-                this.Graph.page(1);
-                //update cache key
-                this.$__cache_key = this.Graph.getCacheHash();
-            }
-            this.loading = true;
-            return await this.sendRequest('set',values,(res) => {
-                this.loading = false;
-            },(res) => {
-                this.bindFormErrors(res.getData());
-                this.onError(res);
-            }, (res) => {
-                this.onUpdated(res);
-                this.DELETE_CACHE(this.$__cache_key)
-            });
+            return await this.sendData(values,func,this.onUpdated,'update')
         },
         async _delete(func = null){
-            if(this.loading)
-                return;
-            //    do fetching
-            this.clearFormErrors();
-
-            if(!func)
-                this.Graph.func('delete');
-            else
-                this.Graph.func(func);
-
-            if (!this.$__cache_key){
-                //    set to page 1
-                this.Graph.page(1);
-                //update cache key
-                this.$__cache_key = this.Graph.getCacheHash();
-            }
-            console.log(this.$__cache_key)
-
-
-            this.loading = true;
-            return await this.sendRequest('set',{},(res) => {
-                this.loading = false;
-            },(res) => {
-                this.bindFormErrors(res.getData());
-                this.onError(res);
-            },(res) => {
-                this.onDeleted(res);
-                this.DELETE_CACHE(this.$__cache_key)
-            });
+            return await this.sendData(null,func,this.onDeleted,'delete')
         },
-
         bindFormErrors(error_fields){
             for (let field in error_fields){
                 if(typeof this.form[field] !== 'undefined')
@@ -259,10 +217,18 @@ export default {
                 this.form[field].errors = [];
             }
         },
-        onUpdated(res){
+        ref(id){
+            this.$set(this.filters,'id',id);
+        },
+        setFilters(filters){
+            this.filters = filters;
 
         },
+        onUpdated(res){
+            this.$toast.success(res.getMsg())
+        },
         onDeleted(res){
+           this.$toast.success(res.getMsg())
 
         },
         formToObj(formData = null) {
@@ -274,10 +240,10 @@ export default {
             return object
         },
         onAdded(res){
-
+            this.$toast.success(res.getMsg())
         },
         onError(res){
-            this.$toast.error(res.getMsg());
+            this.$toast.error(res.getMsg() || res.getNetworkErrorMsg() || res)
         },
         onFetchError(res){
 
@@ -301,6 +267,9 @@ export default {
                 retryFunc: this.refresh
             }
         },
+        can_go_next(){
+            return this.current_page < this.total_pages;
+        },
         ...mapGetters([
             'is_cached',
             'get_cached_response'
@@ -310,9 +279,6 @@ export default {
         "search_query.value": debounce(function (){
             console.log('Searched: ' + this.search_query.value);
             this.fetchSearchResult();
-        },500),
-        "$__cache_key"(){
-            this.refresh();
-        }
+        },500)
     }
 }
