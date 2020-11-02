@@ -17,10 +17,11 @@ module.exports = api => {
             "vue-meta": "^2.3.1",
             "raw-loader": "^4.0.0",
             "@__path/bool": "^1.4.0",
-            "@__path/graph": "^2.7.40",
-            "vue-modally": "^2.2.0",
+            "@__path/graph": "^3.0.40",
+            "vue-modally": "^2.4.0",
             "vue-currency-input": "^1.19.0",
-            "vue-toast-notification": "^0.2.0"
+            "vue-toast-notification": "^0.2.0",
+            "node-time-ago": "^1.0.0"
         },
         devDependencies: {
             "vue-route-generator": "^0.4.1",
