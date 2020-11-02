@@ -4,6 +4,10 @@
     font-weight: 300!important;
   }
 
+  .#{$state_name}#{$screen}txt-lighter#{$state}{
+    font-weight: 200!important;
+  }
+
   .#{$state_name}#{$screen}txt-bold#{$state}{
     font-weight: 600!important;
   }

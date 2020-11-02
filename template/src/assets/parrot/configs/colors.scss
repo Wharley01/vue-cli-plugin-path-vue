@@ -9,13 +9,15 @@
   --sec-shade-1: #222222;
   --sec-shade-2: #141414;
   --sec-shade-3: #060606;
-  --pry: #415B90;
-  --pry-tint-1: #506FAC;
-  --pry-tint-2: #8DA6D6;
+  --pry: #1A73E8;
+  --pry-tint-1: #347ee7;
+  --pry-tint-2: #6299ea;
   --pry-tint-3: #d5e4ff;
-  --pry-shade-1: #32456B;
-  --pry-shade-2: #3C465B;
-  --pry-shade-3: #672c00;
+  --pry-tint-4: #edf5ff;
+  --pry-shade-1: #165fbf;
+  --pry-shade-2: #114993;
+  --pry-shade-3: #0c356a;
+  --pry-shade-4: #103565;
   --red: #92140f;
   --green: #229c20;
   --grey: #F2F4F8;
@@ -39,9 +41,11 @@ $colors:(
         pry-tint-1:  var(--pry-tint-1),
         pry-tint-2:  var(--pry-tint-2),
         pry-tint-3:  var(--pry-tint-3),
+        pry-tint-4:  var(--pry-tint-4),
         pry-shade-1:  var(--pry-shade-1),
         pry-shade-2:  var(--pry-shade-2),
         pry-shade-3:  var(--pry-shade-3),
+        pry-shade-4:  var(--pry-shade-4),
         sec:  var(--sec),
         blue:  var(--blue),
         sec-tint-1:  var(--sec-tint-1),
