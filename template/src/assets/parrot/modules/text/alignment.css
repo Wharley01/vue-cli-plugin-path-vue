@@ -1,0 +1,117 @@
+.txt-center {
+  text-align: center !important;
+}
+
+.txt-left {
+  text-align: left;
+}
+
+.txt-right {
+  text-align: right;
+}
+
+@media only screen and (max-width: 599px) {
+  .sm-txt-center {
+    text-align: center !important;
+  }
+
+  .sm-txt-left {
+    text-align: left;
+  }
+
+  .sm-txt-right {
+    text-align: right;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 899px) {
+  .md-txt-center {
+    text-align: center !important;
+  }
+
+  .md-txt-left {
+    text-align: left;
+  }
+
+  .md-txt-right {
+    text-align: right;
+  }
+}
+@media only screen and (min-width: 900px) and (max-width: 1199px) {
+  /*tablet-landscape-only*/
+  .lg-txt-center {
+    text-align: center !important;
+  }
+
+  .lg-txt-left {
+    text-align: left;
+  }
+
+  .lg-txt-right {
+    text-align: right;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+  /*.desktop-only */
+  .xlg-txt-center {
+    text-align: center !important;
+  }
+
+  .xlg-txt-left {
+    text-align: left;
+  }
+
+  .xlg-txt-right {
+    text-align: right;
+  }
+}
+@media only screen and (min-width: 1401px) {
+  /*.desktop-up */
+  .xxlg-txt-center {
+    text-align: center !important;
+  }
+
+  .xxlg-txt-left {
+    text-align: left;
+  }
+
+  .xxlg-txt-right {
+    text-align: right;
+  }
+}
+.hover\:txt-center:hover {
+  text-align: center !important;
+}
+
+.hover\:txt-left:hover {
+  text-align: left;
+}
+
+.hover\:txt-right:hover {
+  text-align: right;
+}
+
+.focus\:txt-center:focus {
+  text-align: center !important;
+}
+
+.focus\:txt-left:focus {
+  text-align: left;
+}
+
+.focus\:txt-right:focus {
+  text-align: right;
+}
+
+.active\:txt-center:active {
+  text-align: center !important;
+}
+
+.active\:txt-left:active {
+  text-align: left;
+}
+
+.active\:txt-right:active {
+  text-align: right;
+}
+
+/*# sourceMappingURL=alignment.css.map */

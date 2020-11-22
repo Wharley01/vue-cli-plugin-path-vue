@@ -10,7 +10,7 @@
             border-style: solid;
           }
 
-        } @else {
+        } @else if $alias{
           .#{$state_name}#{$screen}bd-#{$alias}-#{$element}#{$state} {
             border-#{$side}-width: #{toRem($size,$element)}!important;
             border-#{$side}-style: solid;
@@ -25,27 +25,27 @@
 @include border-width-for-screen('','','');
 
 @media only screen and (max-width: 599px) {
-  @include border-width-for-screen('sm-','','');
+  @include border-width-for-screen('sm\\:','','');
 }
 //md-css-property
 @media only screen and (min-width: 600px) and (max-width: 899px){
-  @include border-width-for-screen('md-','','');
+  @include border-width-for-screen('md\\:','','');
 }
 
 //lg-css-property
 @media only screen and (min-width: 900px) and (max-width: 1199px) {
   /*tablet-landscape-only*/
-  @include border-width-for-screen('lg-','','');
+  @include border-width-for-screen('lg\\:','','');
 }
 //xlg-css-property
 @media only screen and (min-width: 1200px) and (max-width: 1400px){
   /*.desktop-only */
-  @include border-width-for-screen('xlg-','','');
+  @include border-width-for-screen('xlg\\:','','');
 }
 //xxlg-css-property
 @media only screen and (min-width: 1401px) {
   /*.desktop-up */
-  @include border-width-for-screen('xxlg-','','');
+  @include border-width-for-screen('xxlg\\:','','');
 }
 @include border-width-for-screen('',':hover','hover\\:');
 @include border-width-for-screen('',':focus','focus\\:');

@@ -93,6 +93,7 @@ $sizes: (
         x24: Px($unit_size * 340),
         x25: Px($unit_size * 380),
         x26: Px($unit_size * 400),
+        container: 970,
         none: 0,
         full: 100%,
         half: 50%,
@@ -109,6 +110,3 @@ $header_texts: (
         h2: 50,
         h1: 67
 );
-
-
-
