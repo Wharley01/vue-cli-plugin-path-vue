@@ -16,7 +16,6 @@
     "port": "9001",
     "protocol": "http",
     "server": "http://192.168.0.128:8080",
-    "auth_rdr_URI": "https://192.168.0.128:9001/account/login",
     "_comment": "SSE/WS can be value of watch_method",
     "watch_method": "WS"
   },
