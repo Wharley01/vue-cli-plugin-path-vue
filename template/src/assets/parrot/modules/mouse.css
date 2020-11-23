@@ -1,0 +1,378 @@
+/*WIDTH*/
+.mouse-pointer {
+  cursor: pointer !important;
+}
+
+.mouse-text {
+  cursor: text !important;
+}
+
+.mouse-auto {
+  cursor: auto !important;
+}
+
+.mouse-not-allowed {
+  cursor: not-allowed !important;
+}
+
+.mouse-copy {
+  cursor: copy !important;
+}
+
+.mouse-none {
+  cursor: none !important;
+}
+
+.mouse-cell {
+  cursor: cell !important;
+}
+
+.mouse-alias {
+  cursor: alias !important;
+}
+
+.mouse-col-resize {
+  cursor: col-resize !important;
+}
+
+.mouse-context-menu {
+  cursor: context-menu !important;
+}
+
+@media only screen and (max-width: 599px) {
+  /*WIDTH*/
+  .sm-mouse-pointer {
+    cursor: pointer !important;
+  }
+
+  .sm-mouse-text {
+    cursor: text !important;
+  }
+
+  .sm-mouse-auto {
+    cursor: auto !important;
+  }
+
+  .sm-mouse-not-allowed {
+    cursor: not-allowed !important;
+  }
+
+  .sm-mouse-copy {
+    cursor: copy !important;
+  }
+
+  .sm-mouse-none {
+    cursor: none !important;
+  }
+
+  .sm-mouse-cell {
+    cursor: cell !important;
+  }
+
+  .sm-mouse-alias {
+    cursor: alias !important;
+  }
+
+  .sm-mouse-col-resize {
+    cursor: col-resize !important;
+  }
+
+  .sm-mouse-context-menu {
+    cursor: context-menu !important;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 899px) {
+  /*WIDTH*/
+  .md-mouse-pointer {
+    cursor: pointer !important;
+  }
+
+  .md-mouse-text {
+    cursor: text !important;
+  }
+
+  .md-mouse-auto {
+    cursor: auto !important;
+  }
+
+  .md-mouse-not-allowed {
+    cursor: not-allowed !important;
+  }
+
+  .md-mouse-copy {
+    cursor: copy !important;
+  }
+
+  .md-mouse-none {
+    cursor: none !important;
+  }
+
+  .md-mouse-cell {
+    cursor: cell !important;
+  }
+
+  .md-mouse-alias {
+    cursor: alias !important;
+  }
+
+  .md-mouse-col-resize {
+    cursor: col-resize !important;
+  }
+
+  .md-mouse-context-menu {
+    cursor: context-menu !important;
+  }
+}
+@media only screen and (min-width: 900px) and (max-width: 1199px) {
+  /*tablet-landscape-only*/
+  /*WIDTH*/
+  .lg-mouse-pointer {
+    cursor: pointer !important;
+  }
+
+  .lg-mouse-text {
+    cursor: text !important;
+  }
+
+  .lg-mouse-auto {
+    cursor: auto !important;
+  }
+
+  .lg-mouse-not-allowed {
+    cursor: not-allowed !important;
+  }
+
+  .lg-mouse-copy {
+    cursor: copy !important;
+  }
+
+  .lg-mouse-none {
+    cursor: none !important;
+  }
+
+  .lg-mouse-cell {
+    cursor: cell !important;
+  }
+
+  .lg-mouse-alias {
+    cursor: alias !important;
+  }
+
+  .lg-mouse-col-resize {
+    cursor: col-resize !important;
+  }
+
+  .lg-mouse-context-menu {
+    cursor: context-menu !important;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+  /*.desktop-only */
+  /*WIDTH*/
+  .xlg-mouse-pointer {
+    cursor: pointer !important;
+  }
+
+  .xlg-mouse-text {
+    cursor: text !important;
+  }
+
+  .xlg-mouse-auto {
+    cursor: auto !important;
+  }
+
+  .xlg-mouse-not-allowed {
+    cursor: not-allowed !important;
+  }
+
+  .xlg-mouse-copy {
+    cursor: copy !important;
+  }
+
+  .xlg-mouse-none {
+    cursor: none !important;
+  }
+
+  .xlg-mouse-cell {
+    cursor: cell !important;
+  }
+
+  .xlg-mouse-alias {
+    cursor: alias !important;
+  }
+
+  .xlg-mouse-col-resize {
+    cursor: col-resize !important;
+  }
+
+  .xlg-mouse-context-menu {
+    cursor: context-menu !important;
+  }
+}
+@media only screen and (min-width: 1401px) {
+  /*.desktop-up */
+  /*WIDTH*/
+  .xxlg-mouse-pointer {
+    cursor: pointer !important;
+  }
+
+  .xxlg-mouse-text {
+    cursor: text !important;
+  }
+
+  .xxlg-mouse-auto {
+    cursor: auto !important;
+  }
+
+  .xxlg-mouse-not-allowed {
+    cursor: not-allowed !important;
+  }
+
+  .xxlg-mouse-copy {
+    cursor: copy !important;
+  }
+
+  .xxlg-mouse-none {
+    cursor: none !important;
+  }
+
+  .xxlg-mouse-cell {
+    cursor: cell !important;
+  }
+
+  .xxlg-mouse-alias {
+    cursor: alias !important;
+  }
+
+  .xxlg-mouse-col-resize {
+    cursor: col-resize !important;
+  }
+
+  .xxlg-mouse-context-menu {
+    cursor: context-menu !important;
+  }
+}
+/*WIDTH*/
+.hover\:mouse-pointer:hover {
+  cursor: pointer !important;
+}
+
+.hover\:mouse-text:hover {
+  cursor: text !important;
+}
+
+.hover\:mouse-auto:hover {
+  cursor: auto !important;
+}
+
+.hover\:mouse-not-allowed:hover {
+  cursor: not-allowed !important;
+}
+
+.hover\:mouse-copy:hover {
+  cursor: copy !important;
+}
+
+.hover\:mouse-none:hover {
+  cursor: none !important;
+}
+
+.hover\:mouse-cell:hover {
+  cursor: cell !important;
+}
+
+.hover\:mouse-alias:hover {
+  cursor: alias !important;
+}
+
+.hover\:mouse-col-resize:hover {
+  cursor: col-resize !important;
+}
+
+.hover\:mouse-context-menu:hover {
+  cursor: context-menu !important;
+}
+
+/*WIDTH*/
+.focus\:mouse-pointer:focus {
+  cursor: pointer !important;
+}
+
+.focus\:mouse-text:focus {
+  cursor: text !important;
+}
+
+.focus\:mouse-auto:focus {
+  cursor: auto !important;
+}
+
+.focus\:mouse-not-allowed:focus {
+  cursor: not-allowed !important;
+}
+
+.focus\:mouse-copy:focus {
+  cursor: copy !important;
+}
+
+.focus\:mouse-none:focus {
+  cursor: none !important;
+}
+
+.focus\:mouse-cell:focus {
+  cursor: cell !important;
+}
+
+.focus\:mouse-alias:focus {
+  cursor: alias !important;
+}
+
+.focus\:mouse-col-resize:focus {
+  cursor: col-resize !important;
+}
+
+.focus\:mouse-context-menu:focus {
+  cursor: context-menu !important;
+}
+
+/*WIDTH*/
+.active\:mouse-pointer:active {
+  cursor: pointer !important;
+}
+
+.active\:mouse-text:active {
+  cursor: text !important;
+}
+
+.active\:mouse-auto:active {
+  cursor: auto !important;
+}
+
+.active\:mouse-not-allowed:active {
+  cursor: not-allowed !important;
+}
+
+.active\:mouse-copy:active {
+  cursor: copy !important;
+}
+
+.active\:mouse-none:active {
+  cursor: none !important;
+}
+
+.active\:mouse-cell:active {
+  cursor: cell !important;
+}
+
+.active\:mouse-alias:active {
+  cursor: alias !important;
+}
+
+.active\:mouse-col-resize:active {
+  cursor: col-resize !important;
+}
+
+.active\:mouse-context-menu:active {
+  cursor: context-menu !important;
+}
+
+/*# sourceMappingURL=mouse.css.map */

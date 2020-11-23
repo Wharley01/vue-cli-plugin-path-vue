@@ -10,27 +10,27 @@
 @include max-width-for-screen('','','');
 
 @media only screen and (max-width: 599px) {
-  @include max-width-for-screen('sm-','','');
+  @include max-width-for-screen('sm\\:','','');
 }
 //md-css-property
 @media only screen and (min-width: 600px) and (max-width: 899px){
-  @include max-width-for-screen('md-','','');
+  @include max-width-for-screen('md\\:','','');
 }
 
 //lg-css-property
 @media only screen and (min-width: 900px) and (max-width: 1199px) {
   /*tablet-landscape-only*/
-  @include max-width-for-screen('lg-','','');
+  @include max-width-for-screen('lg\\:','','');
 }
 //xlg-css-property
 @media only screen and (min-width: 1200px) and (max-width: 1400px){
   /*.desktop-only */
-  @include max-width-for-screen('xlg-','','');
+  @include max-width-for-screen('xlg\\:','','');
 }
 //xxlg-css-property
 @media only screen and (min-width: 1401px) {
   /*.desktop-up */
-  @include max-width-for-screen('xxlg-','','');
+  @include max-width-for-screen('xxlg\\:','','');
 }
 @include max-width-for-screen('',':hover','hover\\:');
 @include max-width-for-screen('',':focus','focus\\:');

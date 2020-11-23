@@ -1,0 +1,18 @@
+/* Error: Undefined variable.
+ *   ,
+ * 3 |   @each $element, $size in $sizes {
+ *   |                            ^^^^^^
+ *   '
+ *   height.scss 3:28  width-for-screen()
+ *   height.scss 10:1  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined variable.\a   \2577 \a 3 \2502    @each $element, $size in $sizes {\d\a   \2502                             ^^^^^^\a   \2575 \a   height.scss 3:28  width-for-screen()\a   height.scss 10:1  root stylesheet";
+}

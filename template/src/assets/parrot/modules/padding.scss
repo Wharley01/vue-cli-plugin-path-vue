@@ -10,7 +10,17 @@
         .#{$state_name}#{$screen}p-#{$element}#{$state}{
           padding: #{toRem($size,$element)}!important;
         }
-      } @else {
+      } @else if $side == "y" {
+        .#{$state_name}#{$screen}p-y-#{$element}#{$state} {
+          padding-top: #{toRem($size,$element)} !important;
+          padding-bottom: #{toRem($size,$element)} !important;
+        }
+      } @else if $side == "x" {
+        .#{$state_name}#{$screen}p-x-#{$element}#{$state} {
+          padding-right: #{toRem($size,$element)} !important;
+          padding-left: #{toRem($size,$element)} !important;
+        }
+      } @else if $alias {
         .#{$state_name}#{$screen}p-#{$alias}-#{$element}#{$state}{
           padding-#{$side}: #{toRem($size,$element)}!important;
         }
@@ -25,25 +35,25 @@
 @include padding-for-screen('','','');
 
 @media only screen and (max-width: 599px) {
-  @include padding-for-screen('sm-','','');
+  @include padding-for-screen('sm\\:','','');
 }
 //md-css-property
 @media only screen and (min-width: 600px) and (max-width: 899px){
-  @include padding-for-screen('md-','','');
+  @include padding-for-screen('md\\:','','');
 }
 
 //lg-css-property
 @media only screen and (min-width: 900px) and (max-width: 1199px) {
   /*tablet-landscape-only*/
-  @include padding-for-screen('lg-','','');
+  @include padding-for-screen('lg\\:','','');
 }
 //xlg-css-property
 @media only screen and (min-width: 1200px) and (max-width: 1400px){
   /*.desktop-only */
-  @include padding-for-screen('xlg-','','');
+  @include padding-for-screen('xlg\\:','','');
 }
 //xxlg-css-property
 @media only screen and (min-width: 1401px) {
   /*.desktop-up */
-  @include padding-for-screen('xxlg-','','');
+  @include padding-for-screen('xxlg\\:','','');
 }

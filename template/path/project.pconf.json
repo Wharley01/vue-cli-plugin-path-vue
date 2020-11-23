@@ -4,7 +4,7 @@
     "is_production": true,
     "version": "1.0",
     "directory": "",
-    "host": "192.168.0.128",
+    "host": "0.0.0.0",
     "port": "9001",
     "protocol": "http",
     "server": "http://192.168.0.128:8080",

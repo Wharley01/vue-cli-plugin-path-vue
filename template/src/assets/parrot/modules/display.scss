@@ -29,27 +29,27 @@
 @include display-for-screen('','','');
 
 @media only screen and (max-width: 599px) {
-  @include display-for-screen('sm-','','');
+  @include display-for-screen('sm\\:','','');
 }
 //md-css-property
 @media only screen and (min-width: 600px) and (max-width: 899px){
-  @include display-for-screen('md-','','');
+  @include display-for-screen('md\\:','','');
 }
 
 //lg-css-property
 @media only screen and (min-width: 900px) and (max-width: 1199px) {
   /*tablet-landscape-only*/
-  @include display-for-screen('lg-','','');
+  @include display-for-screen('lg\\:','','');
 }
 //xlg-css-property
 @media only screen and (min-width: 1200px) and (max-width: 1400px){
   /*.desktop-only */
-  @include display-for-screen('xlg-','','');
+  @include display-for-screen('xlg\\:','','');
 }
 //xxlg-css-property
 @media only screen and (min-width: 1401px) {
   /*.desktop-up */
-  @include display-for-screen('xxlg-','','');
+  @include display-for-screen('xxlg\\:','','');
 }
 
 @include display-for-screen('',':hover','hover\\:');

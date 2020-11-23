@@ -3,7 +3,7 @@
   transition: .3s all;
 }
 html{
-  overflow-x: hidden;
+  overflow: hidden;
 }
 body{
   font-family: $normal_text_font!important;
@@ -12,7 +12,7 @@ body{
   font-size: #{toRem($font_size)};
   font-weight: 300;
   line-height: #{getLineHeight($font_size)};
-  overflow-x: hidden;
+  overflow: hidden;
   //letter-spacing: .5px!important;
 }
 p{

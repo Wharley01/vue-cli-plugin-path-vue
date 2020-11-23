@@ -17,27 +17,27 @@
 @include image-for-screen('','','');
 
 @media only screen and (max-width: 599px) {
-  @include image-for-screen('sm-','','');
+  @include image-for-screen('sm\\:','','');
 }
 //md-css-property
 @media only screen and (min-width: 600px) and (max-width: 899px){
-  @include image-for-screen('md-','','');
+  @include image-for-screen('md\\:','','');
 }
 
 //lg-css-property
 @media only screen and (min-width: 900px) and (max-width: 1199px) {
   /*tablet-landscape-only*/
-  @include image-for-screen('lg-','','');
+  @include image-for-screen('lg\\:','','');
 }
 //xlg-css-property
 @media only screen and (min-width: 1200px) and (max-width: 1400px){
   /*.desktop-only */
-  @include image-for-screen('xlg-','','');
+  @include image-for-screen('xlg\\:','','');
 }
 //xxlg-css-property
 @media only screen and (min-width: 1401px) {
   /*.desktop-up */
-  @include image-for-screen('xxlg-','','');
+  @include image-for-screen('xxlg\\:','','');
 }
 @include image-for-screen('',':hover','hover\\:');
 @include image-for-screen('',':focus','focus\\:');

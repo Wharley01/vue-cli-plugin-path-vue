@@ -10,7 +10,17 @@
           .#{$state_name}#{$screen}m-#{$element}#{$state} {
             margin: #{toRem($size,$element)} !important;
           }
-        } @else {
+        } @else if $side == "y" {
+          .#{$state_name}#{$screen}m-y-#{$element}#{$state} {
+            margin-top: #{toRem($size,$element)} !important;
+            margin-bottom: #{toRem($size,$element)} !important;
+          }
+        } @else if $side == "x" {
+          .#{$state_name}#{$screen}m-x-#{$element}#{$state} {
+            margin-right: #{toRem($size,$element)} !important;
+            margin-left: #{toRem($size,$element)} !important;
+          }
+        } @else if $alias{
           .#{$state_name}#{$screen}m-#{$alias}-#{$element}#{$state} {
             margin-#{$side}: #{toRem($size,$element)} !important;
           }
@@ -30,7 +40,7 @@
         .#{$state_name}#{$screen}neg\:m-#{$element}#{$state} {
           margin: -#{toRem($size,$element)} !important;
         }
-      } @else {
+      } @else if $alias != null{
         .#{$state_name}#{$screen}neg\:m-#{$alias}-#{$element}#{$state} {
           margin-#{$side}: -#{toRem($size,$element)} !important;
         }
@@ -45,27 +55,27 @@
 @include margin-for-screen('','','');
 
 @media only screen and (max-width: 599px) {
-  @include margin-for-screen('sm-','','');
+  @include margin-for-screen('sm\\:','','');
 }
 //md-css-property
 @media only screen and (min-width: 600px) and (max-width: 899px){
-  @include margin-for-screen('md-','','');
+  @include margin-for-screen('md\\:','','');
 }
 
 //lg-css-property
 @media only screen and (min-width: 900px) and (max-width: 1199px) {
   /*tablet-landscape-only*/
-  @include margin-for-screen('lg-','','');
+  @include margin-for-screen('lg\\:','','');
 }
 //xlg-css-property
 @media only screen and (min-width: 1200px) and (max-width: 1400px){
   /*.desktop-only */
-  @include margin-for-screen('xlg-','','');
+  @include margin-for-screen('xlg\\:','','');
 }
 //xxlg-css-property
 @media only screen and (min-width: 1401px) {
   /*.desktop-up */
-  @include margin-for-screen('xxlg-','','');
+  @include margin-for-screen('xxlg\\:','','');
 }
 
 @include margin-for-screen('',':hover','hover\\:');
