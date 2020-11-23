@@ -1,10 +1,6 @@
 {
   "name": "vue-cli-plugin-path-vue",
-<<<<<<< HEAD
-  "version": "4.3.0",
-=======
   "version": "5.1.0",
->>>>>>> 7c3b5a16d08a80ab8244e6132875e00971d1244a
   "description": "Path server side rendering framework for PathPHP framework",
   "main": "index.js",
   "scripts": {
