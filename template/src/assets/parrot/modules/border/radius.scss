@@ -15,7 +15,6 @@
         @each $s_side in $sides {
           $s_alias: map_get($side_aliases, $s_side);
           @if ($s_side !="all" and $s_side !=$side and $s_alias != null) {
-            @debug $s_alias;
             .#{$state_name}#{$screen}bd-round-#{$s_alias}-#{$alias}-#{$element}#{$state} {
               @if $side=="all" {
                 border-radius: #{toRem($size,$element)}!important;
