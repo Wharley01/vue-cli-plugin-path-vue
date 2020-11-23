@@ -1,4 +1,12 @@
 {
+  "DATABASE": {
+    "host": "localhost",
+    "user": "root",
+    "password": "",
+    "name": "usr_test",
+    "charset": "utf8mb4",
+    "collate": "utf8mb4_unicode_ci"
+  },
   "PROJECT": {
     "name": "Buysafe",
     "is_production": true,
@@ -18,6 +26,22 @@
       "host": "http://192.168.0.128:8080",
       "port": 443,
       "scheme": "SSL"
+    }
+  },
+  "MAILER": {
+    "USE": "smtp",
+    "SMTP": {
+      "host": "smtp-relay.gmail.com",
+      "uses_auth": false,
+      "username": null,
+      "password": null,
+      "port": 587,
+      "protocol": "",
+      "charset": "UTF-8"
+    },
+    "ADMIN_INFO": {
+      "email": "noreply@website.ng",
+      "name": "Support"
     }
   }
 }
